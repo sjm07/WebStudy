@@ -2,7 +2,8 @@
 *.mdb  
 *.ldb  
 *.suo
-*.user 
+*.user
+*.csproj.user 
 
 #过滤文件夹Debug,Release,obj,bin
 [Dd]ebug/
