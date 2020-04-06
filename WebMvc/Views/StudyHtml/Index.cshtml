@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Study Html Help Class";
+}
+
+<h2>Inline Html Helper</h2>
+@helper ShowMessage(string[] strArr)
+{
+    <ol>
+        @foreach (var item in strArr)
+        {
+            <li>@item</li>
+        }
+    </ol>
+}
+<h3>编程语言集合：[本页Html Helpers]</h3>
+@ShowMessage(new string[] { "Java","C#","Python","VB.NET"})
+<h3>[内联Html Helpers]</h3>
+<h3>求和函数：@CommonInlineHelper.sum(4,5)</h3>
+
+<h2>Built-In Type -- Standard Helpers</h2>
+@Html.Label("UserName")
+@Html.TextBox("UserName")<br /><br />
+@Html.Label("Password")
+@Html.TextBox("Password")<br /><br />
+@Html.DropDownList("ddlLanguage",new SelectList(new string[] { "Chinese","English","Japanses"}))

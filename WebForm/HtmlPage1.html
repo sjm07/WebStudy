@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!--<script src="js/InputValid.js"></script>-->
+    <script>
+
+        /*邮箱验证*/
+        function checkEmail() {
+
+            var pattern = /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/,
+	str = $("#email").val();
+            alert(pattern.test(str));
+        }
+        /*手机验证*/
+        function checkMobilePhone() {
+            var pattern = /0?(13|14|15|17|18|19)[0-9]{9}/,
+	str = $("#phone").val();
+            alert(pattern.test(str));
+        }
+        /*正符点数*/
+        function checkPositivePtNumber()
+        {
+            var pattern = /[1-9]\d*.\d*|0.\d*[1-9]\d*/,
+	        str = $("#ptnumber").val();
+            alert(pattern.test(str));
+        }
+        
+        function CheckPassWord(password) {//密码必须包含数字和字母
+
+           
+            str = $("#password").val();
+                //if (str == null || str.length <8) {
+                //    return false;
+                //}
+            var reg1 = new RegExp(/^[0-9A-Za-z]+$/);
+            alert(reg1.test(str));
+                if (!reg1.test(str)) {
+                    return false;
+                }
+                var reg = new RegExp(/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/);
+                alert(reg.test(str));
+                if (reg.test(str)) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+            
+            //if (str == null || str.length < 6) {
+            //    return false;
+            //}
+            //var reg = new RegExp(/^(?![^a-zA-Z]+$)(?!\D+$)/);
+            ////var reg = new RegExp("^[a-zA-Z0-9\u4e00-\u9fa5]+$")
+            //alert(reg.test(str));
+            //if (reg.test(str)) {
+            //    return true;
+            //}
+            //else { return false;}
+               
+        }
+
+        function checkNickName(nickName)
+        {
+            
+            //if (str == null || str.length < 6) {
+            //    return false;
+            //}
+           // var pattern = /[A-Za-z0-9_\-\u4e00-\u9fa5]+/,
+            var pattern =  new RegExp("^[a-zA-Z0-9\u4e00-\u9fa5]+$")
+
+	        str = $("#nickname").val();
+            
+            alert(pattern.test(str));
+            if (reg.test(str)) {
+                return true;
+            }
+            else { return false;}
+            
+        }
+
+    </script>
+</head>
+<body>
+    <p>
+        123
+        <canvas height="100" width="100" style="border:1px solid #000000;"></canvas>
+        <input type="text" id="email" placeholder="邮箱" />
+        <input type="text" id="phone" placeholder="手机" />
+        <input type="text" id="ptnumber" placeholder="正符点数" />
+        <input type="password" id="password"  placeholder="密码" />
+        <input type="text" id="nickname" placeholder="昵称" />
+
+        <input type="button" id="btnOK" value="test" onclick="return CheckPassWord()" />
+</body>
+</html>

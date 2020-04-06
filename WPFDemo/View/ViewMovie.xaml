@@ -1,0 +1,32 @@
+﻿<dx:ThemedWindow
+    x:Class="WPFDemo.View.ViewMovie"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    Title="ViewMovie" Height="350" Width="525"
+    >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <dxlc:LayoutControl VerticalAlignment="Stretch" Orientation="Vertical">
+            <dxlc:LayoutGroup Margin="0 10 0 0">
+                <dxlc:LayoutItem Label="查看视频">
+                    <StackPanel Orientation="Horizontal">
+                        <dxe:TextEdit x:Name="txtFile" TextWrapping="Wrap" VerticalContentAlignment="Top" MinWidth="250"></dxe:TextEdit>
+                        <dx:SimpleButton x:Name="btnOpenFile" Content="选择文件" HorizontalAlignment="Left"  MinWidth="100" MinHeight="25" Glyph="{dx:DXImage Image=Apply_16x16.png}" Click="btnOpenFile_Click"/>
+                        <dx:SimpleButton x:Name="btnView" Content="查看" HorizontalAlignment="Left"  MinWidth="100" MinHeight="25" Glyph="{dx:DXImage Image=Apply_16x16.png}" Click="btnView_Click"/>
+                    </StackPanel>
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+        <dxlc:LayoutControl Grid.Row="1">
+            <MediaElement x:Name="MediaPlayer" LoadedBehavior="Manual" UnloadedBehavior="Stop" MediaOpened="MediaPlayer_MediaOpened" />
+        </dxlc:LayoutControl>
+    </Grid>
+</dx:ThemedWindow>

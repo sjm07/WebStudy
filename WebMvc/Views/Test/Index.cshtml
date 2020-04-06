@@ -1,0 +1,22 @@
+﻿@model WebMvc.Models.TestModel
+@{
+    Layout = null;
+    ViewBag.Title = "测试学习页面";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+    <p>this is a index page</p>
+        <span>@Model.result</span>
+        <span>"@ViewBag.User_ID"</span>
+        <span>"@ViewData["username"]"</span>
+    </div>
+</body>
+</html>

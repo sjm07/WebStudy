@@ -15,7 +15,7 @@ namespace WPFDemo
     {
         private void OnAppStartup_UpdateThemeName(object sender, StartupEventArgs e)
         {
-
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(AppDomain.CurrentDomain.BaseDirectory + @"Log4net\log4net.config"));
             DevExpress.Xpf.Core.ApplicationThemeHelper.UpdateApplicationThemeName();
         }
     }

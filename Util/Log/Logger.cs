@@ -38,6 +38,14 @@ namespace Util.Log
             }
         }
 
+        public static void Error(object message)
+        {
+            if (Log.IsDebugEnabled)
+            {
+                Log.Debug(message);
+            }
+        }
+
         public static void Error(HttpActionContext ActionContext, Exception ex)
         {
             if (Log.IsErrorEnabled)
